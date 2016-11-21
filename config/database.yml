@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: root
+development:
+  <<: *default
+  database: react_pro_development
+test:
+  <<: *default
+  database: react_pro_test
+production:
+  <<: *default
+  database: react_pro_production
+  username: react_pro
+  password: <%= ENV['REACT_PRO_DATABASE_PASSWORD'] %>
